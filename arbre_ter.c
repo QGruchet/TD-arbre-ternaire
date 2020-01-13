@@ -73,6 +73,10 @@ int hauteur(ATR a)
 {
 	if(est_vide(a))
 	{
+		return -1;
+	}
+	if(est_vide(a->fg) && est_vide(a->fm) && est_vide(a->fd))
+	{
 		return 0;
 	}
 	return 1 + max3(hauteur(a->fg), hauteur(a->fd), hauteur(a->fm));
